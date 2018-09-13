@@ -3,12 +3,14 @@ title: "Chunk 4"
 output: html_document
 ---
 
-```{r loading, warning=F, message=F, echo=F}
-# load packages
+# Boston employee pay in 2014
+
+```{r loading, warning=FALSE, message=FALSE, echo=FALSE}
+#load packages
 library(tidyverse)
 
-# Loading the Boston city payroll
-payroll <- read_csv("data/bostonpayroll2013.csv")
+#Loading the Boston city payroll
+payroll <- read.csv("data/bostonpayroll2013.csv")
 
 # Cleaning up column names
 colnames(payroll) <- make.names(colnames(payroll))
@@ -30,7 +32,8 @@ The Boston city employee who was paid the most in 2014 was a `r most_pay$TITLE` 
 
 This person made $`r prettyNum(most_pay$TOTAL.EARNINGS,big.mark=",",scientific=FALSE)`.
 
-```{r display_data, warning=F, message=F, echo=F}
+
+```{r display_data, warning=FALSE, echo=F}
 library(DT)
-datatable(payroll_total)
+datatable(payroll)
 ```

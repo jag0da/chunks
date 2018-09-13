@@ -3,17 +3,16 @@ title: "Chunk 2"
 output: html_document
 ---
 
-```{r loading, warning=F, message=F}
-# load packages
+```{r loading, warning=FALSE, message=FALSE}
+#load packages
 library(tidyverse)
 
-# Loading the Boston city payroll
-payroll <- read_csv("data/bostonpayroll2013.csv")
+#Loading the Boston city payroll
+payroll <- read.csv("data/bostonpayroll2013.csv")
 ```
+Let's look at the data in R Markdown with a new package called ['DT']((https://rstudio.github.io/DT/) that uses the Datatables [jquery library](https://datatables.net/).
 
-Let's look at the data in R Markdown with a new package called [`DT`](https://rstudio.github.io/DT/) that uses the Datatables [jquery library](https://datatables.net/).
-
-```{r display_data, warning=F}
+```{r display_data, warning=FALSE}
 library(DT)
 datatable(payroll)
 ```

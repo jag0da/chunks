@@ -1,7 +1,5 @@
 ---
 title: "Chunk 6"
-author: "Andrew"
-date: "7/23/2018"
 output:
   html_document:
     theme: united
@@ -19,6 +17,7 @@ payroll <- read_csv("data/bostonpayroll2013.csv")
 ```
 
 ```{r cleaning_data, warning=F, echo=F}
+
 colnames(payroll) <- make.names(colnames(payroll))
 
 payroll$REGULAR <- gsub("\\$", "", payroll$REGULAR)
@@ -50,7 +49,7 @@ payroll$TOTAL.EARNINGS <- gsub(",", "", payroll$TOTAL.EARNINGS)
 payroll$TOTAL.EARNINGS <- as.numeric(payroll$TOTAL.EARNINGS)
 ```
 
-```{r analysis, warning=F, message=F}
+```{r analysis, warning=F, message=F, echo=F}
 top5 <- payroll %>%
 group_by(DEPARTMENT) %>%
 summarize(Average.Earnings=mean(TOTAL.EARNINGS, na.rm=T)) %>%

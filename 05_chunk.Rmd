@@ -3,7 +3,6 @@ title: "Chunk 5"
 output: html_document
 ---
 
-
 # Departments with the highest average pay
 
 ```{r loading, warning=F, message=F, echo=F}

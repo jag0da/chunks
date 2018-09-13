@@ -1,13 +1,10 @@
 ---
 title: "Chunk 7"
-author: "Andrew"
-date: "3/10/2018"
 output:
-  html_document: 
+  html_document:
     toc: true
     toc_float: true
 ---
-
 
 # Boston employee pay in 2014
 
@@ -63,9 +60,9 @@ payroll$TOTAL.EARNINGS <- as.numeric(payroll$TOTAL.EARNINGS)
 
 ```{r analysis, warning=F, message=F, echo=F}
 top5 <- payroll %>%
-  group_by(DEPARTMENT) %>%
-  summarize(Average.Earnings=mean(TOTAL.EARNINGS, na.rm=T)) %>%
-  arrange(desc(Average.Earnings)) %>%
+group_by(DEPARTMENT) %>%
+summarize(Average.Earnings=mean(TOTAL.EARNINGS, na.rm=T)) %>%
+arrange(desc(Average.Earnings)) %>%
   head(5)
 
 ```
